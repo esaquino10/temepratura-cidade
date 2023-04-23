@@ -1,0 +1,13 @@
+import requests
+
+# Fazer uma requisição à API de previsão do tempo
+response = requests.get('https://api.openweathermap.org/data/2.5/weather?q=Cidade&appid=API_KEY')
+
+# Verificar o status da resposta
+if response.status_code == 200:
+    data = response.json()
+    # Extrair os dados da previsão do tempo
+    # e realizar as operações desejadas
+    print(data)
+else:
+    print('Erro ao obter a previsão do tempo:', response.status_code)
